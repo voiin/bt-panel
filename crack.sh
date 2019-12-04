@@ -49,5 +49,5 @@ cd /www/server/panel/data/;
 touch userInfo.json;
 /etc/init.d/bt restart;
 echo "$info"
-
+rm -rf install.sh;
 
