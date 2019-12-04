@@ -6,14 +6,14 @@ info='#================================================
 #	Author: wilin
 #	Blogs: www.axrni.cn&&voiin.com
 #================================================='
-wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/install.sh" && bash install.sh;
+wget -N --no-check-certificate https://raw.githubusercontent.com/voiin/bt-panel/master/install.sh && bash install.sh
 if [ -f "/www/server/panel/static/css/site.css" ];then
 	echo "开始下载专业版";
 else
 	echo "安装失败";		
 	exit;
 fi
-wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/update.sh" && bash update.sh;
+wget -O update.sh https://raw.githubusercontent.com/voiin/bt-panel/master/update_pro.sh && bash update.sh
 address=$(cat /www/server/panel/data/iplist.txt)
 port='8888'
 arry=""
@@ -35,19 +35,19 @@ echo -e "=================================================================="
 
 while [ "$go" != 'yes' ] && [ "$go" != 'no' ]
 do
-	read -p "是否为你开启破解之旅?(yes/no): " go;
+	read -p "是否为你开启破解之旅?(yes/no): " go
 done
 
 	if [ "$go" = 'no' ];then
 		exit;
 	fi
 
-cd /www/server/panel/class/;
-sed -i '163d' common.py;
-sed -i '162a\        data = {'status' : True,'msg' : {'endtime' : 32503651199}};' common.py;
-cd /www/server/panel/data/;
-touch userInfo.json;
-/etc/init.d/bt restart;
+cd /www/server/panel/class/
+sed -i '163d' common.py
+sed -i '162a\        data = {'status' : True,'msg' : {'endtime' : 32503651199}};' common.py
+cd /www/server/panel/data/
+touch userInfo.json
+/etc/init.d/bt restart
 echo "$info"
-rm -rf crack.sh;
+rm -rf crack.sh
 
