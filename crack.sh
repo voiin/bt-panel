@@ -6,14 +6,14 @@ info='#================================================
 #	Author: wilin
 #	Blogs: www.axrni.cn&&voiin.com
 #================================================='
-wget -O install.sh "https://raw.githubusercontent.com/voiin/bt-panel/master/bt-install.sh" bash install.sh;
+wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/install.sh" && bash install.sh;
 if [ -f "/www/server/panel/static/css/site.css" ];then
 	echo "开始下载专业版";
 else
 	echo "安装失败";		
 	exit;
 fi
-wget -O update.sh "https://raw.githubusercontent.com/voiin/bt-panel/master/pro.sh" bash update.sh;
+wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/pro.sh" && bash update.sh;
 address=$(cat /www/server/panel/data/iplist.txt)
 port='8888'
 arry=""
@@ -49,5 +49,5 @@ cd /www/server/panel/data/;
 touch userInfo.json;
 /etc/init.d/bt restart;
 echo "$info"
-rm -rf install.sh;
+rm -rf crack.sh;
 
