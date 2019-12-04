@@ -13,7 +13,7 @@ else
 	echo "安装失败";		
 	exit;
 fi
-wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/pro.sh" && bash update.sh;
+wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/update.sh" && bash update.sh;
 address=$(cat /www/server/panel/data/iplist.txt)
 port='8888'
 arry=""
