@@ -4,5 +4,5 @@
 
 # 宝塔5.9一键破解脚本
 ```bash
- wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/crack.sh" bash crack.sh
+ wget -N --no-check-certificate "https://raw.githubusercontent.com/voiin/bt-panel/master/crack.sh" && bash crack.sh
 ```
