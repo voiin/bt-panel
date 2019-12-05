@@ -82,5 +82,5 @@ python tools.py o
 sleep 1 && service bt restart > /dev/null 2>&1 &
 echo "====================================="
 echo "已成功升级到[$version]${Ver}";
-
+rm -rf update.sh
 
