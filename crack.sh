@@ -54,10 +54,11 @@ sed -i '164d' common.py
 echo "正在植入破解代码......" && sleep 1
 sed -i "163a\        data = {'status' : True,'msg' : {'endtime' : 32503651199}}" common.py
 echo "正在还原编码格式......" && sleep 1
-sed -i -e 's/$//' common.py
+sed -i -e 's/
+$//' common.py
 touch /www/server/panel/data/userInfo.json
 sleep 5
 /etc/init.d/bt restart
 echo -e "\033[36m$info\033[0m"
-
+rm -f crack.sh
 
