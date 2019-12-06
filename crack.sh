@@ -54,10 +54,22 @@ sed -i '164d' common.py
 echo "正在植入破解代码......" && sleep 1
 sed -i "163a\        data = {'status' : True,'msg' : {'endtime' : 32503651199}}" common.py
 echo "正在还原编码格式......" && sleep 1
-sed -i -e 's/$//' common.py
+sed -i -e 's/
+$//' common.py
 touch /www/server/panel/data/userInfo.json
 sleep 5
 /etc/init.d/bt restart
 echo -e "\033[36m$info\033[0m"
-rm -f crack.sh
+cd /root
+touch 2.sh
+echo "#!/bin/bash" > 2.sh
+echo "rm -rf 1.sh" >> 2.sh
+bash 2.sh
+rm -rf 2.sh
+if [[ -f "/root/1.sh" || -f "/root/2.sh" ]];then
+	echo "已为你备份脚本"
+else
+	echo "已为你删除脚本"
+fi
+
 
